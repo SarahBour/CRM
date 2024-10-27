@@ -1,0 +1,32 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Auth Page";
+    Layout = null;
+}
+
+
+<img src="~/images/Logo.png" class="image"/>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Culture2Geth.styles.css" asp-append-version="true" />
+
+<div class="containerAuth">
+        <h3>WELCOME BACK :)</h3>
+        <p>Our community missed you already!</p>
+        <br />
+        <form action="/Home" method="POST">
+            <div class="form-group">
+                <label for="Email">Email</label>
+                <input type="email" name="Email" class="form-control" placeholder="Enter your email" required/>
+            </div>
+            <br />
+            <div>
+                <label for="Password">Password</label>
+                <input type="password" name="Password" class="form-control" placeholder="Enter your password" required/>
+            </div>
+            <p class="forgot-pass">Forgot password?</p>
+            <br />
+            <button class="button" type="submit">Sign In </button>
+        </form>
+</div>
