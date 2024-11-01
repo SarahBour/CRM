@@ -1,7 +1,14 @@
+using Culture2Geth.Models;
+using Microsoft.EntityFrameworkCore;
+using MySql.Data.MySqlClient;
+using Pomelo.EntityFrameworkCore.MySql;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorPages();
+builder.Services.AddDbContext<ApplicationDBContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
+	new MySqlServerVersion(new Version(8, 2, 12))));
 
 var app = builder.Build();
 
