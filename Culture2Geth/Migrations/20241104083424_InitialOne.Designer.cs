@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Culture2Geth.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20241029095634_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20241104083424_InitialOne")]
+    partial class InitialOne
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -31,6 +31,10 @@ namespace Culture2Geth.Migrations
                         .HasColumnType("int");
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("UserId"));
+
+                    b.Property<string>("Address")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("Email")
                         .IsRequired()
@@ -55,11 +59,18 @@ namespace Culture2Geth.Migrations
                     b.Property<int>("MailingList")
                         .HasColumnType("int");
 
-                    b.Property<string>("MemberType")
+                    b.Property<string>("MembershipType")
                         .IsRequired()
                         .HasColumnType("longtext");
 
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.Property<int>("PhoneNumber")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ProfileStatus")
                         .IsRequired()
                         .HasColumnType("longtext");
 
@@ -69,7 +80,7 @@ namespace Culture2Geth.Migrations
 
                     b.HasKey("UserId");
 
-                    b.ToTable("Users");
+                    b.ToTable("User");
                 });
 #pragma warning restore 612, 618
         }

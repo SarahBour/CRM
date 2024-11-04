@@ -31,6 +31,10 @@ body {
     font-weight: bold;
 }
 
+.nav-link{
+    margin-top:20px;
+}
+
 .containerAuth {
     color: white;
     background-color: #390814;
@@ -39,17 +43,22 @@ body {
     position: fixed;
     right: 0;
     top: 0;
-    padding: 140px;
+    padding: 50px;
     box-sizing: border-box;
+    overflow-y: auto;
 }
 
 .button {
     background-color: #FD1F3D;
     color: white;
-    border-radius: 16px;
+    border-radius: 20px;
     padding: 10px;
     cursor: pointer;
     border: none;
+    padding-right: 30px;
+    padding-left: 30px;
+    display: block;
+    margin: 20px auto 0;
 }
     .button:hover {
         background-color: white;
@@ -66,4 +75,16 @@ label{
     display: block;
     text-align: right;
     margin-bottom: 0.5rem;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+form{
+    padding: 20px;
+}
+
+input{
+    border-radius: 16px;
 }

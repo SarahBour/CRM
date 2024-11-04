@@ -27,6 +27,8 @@ app.UseRouting();
 
 app.UseAuthorization();
 
+// redirects to home page first
+app.MapGet("/", () => Results.Redirect("/Home"));
 app.MapRazorPages();
 
 app.Run();

@@ -12,7 +12,47 @@
     <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3">
             <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">Together Culture</a>
+                <a class="navbar-brand" asp-area="" asp-page="/Home">
+                    <img src="images/logonav.png" alt="Together Culture Cambridge Logo" style="height: 100px"/>
+                    </a>
+                <div class="navbar-options" id="navbarNav">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <span class="nav-link" style="color: white; font-size: 14px; font-weight:normal; margin-right: 15px">About</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link" style="color: white; font-size: 14px; font-weight:normal;margin-right: 15px">Membership</span>
+
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link" style="color: white; font-size: 14px;font-weight:normal; margin-right: 15px">What's On'</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link" style="color: white; font-size: 14px; font-weight:normal;margin-right: 15px">Place Hire</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link" style="color: white; font-size: 14px; font-weight:normal;margin-right: 15px">Shop</span>
+                        </li>
+                        <li class="nav-item">
+                            <span class="nav-link" style="color: white; font-size: 14px;font-weight:normal; margin-right: 15px">Blog</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" style="color: white; font-size: 14px; font-weight:normal;margin-right: 50px" href="/Index">Login</a>
+                        </li>
+                        <li class="nav-item">
+                            <button
+                                class="button"
+                                type="button"
+                                onclick="window.location.href='/Register'" 
+                                style="background: #390814;"
+                                onmouseover="this.style.backgroundColor='white'; this.style.color= '#390814'"
+                                    onmouseout="this.style.backgroundColor='#390814'; this.style.color='white'">
+                                Join us
+                                </button>
+                        </li>
+
+                    </ul>
+                </div>
             </div>
         </nav>
     </header>
