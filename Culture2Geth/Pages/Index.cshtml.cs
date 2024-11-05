@@ -26,7 +26,6 @@ namespace Culture2Geth.Pages
 			var user = await _context.User.FirstOrDefaultAsync(u => u.Email == Email);
             if (user != null && Password == user.Password)
 			{
-                Debug.WriteLine("I'm there");
                 if (user.Role == "Admin")
 				{
 					return RedirectToPage("Admin");
@@ -51,4 +50,4 @@ namespace Culture2Geth.Pages
 }
 // BCrypt.Net.BCrypt.Verify(Password, user.Password)
 // add the errors in the UI for the credentials 
-// check for domain name for example @Culture2Geth.com
+// forgot password logic 

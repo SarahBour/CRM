@@ -15,7 +15,7 @@
 
 <div class="containerAuth">
 	<h2 style="color: #FD1F3D">Request for membership</h2>
-	<form method="post">
+	<form method="POST">
 		@if (Model.CurrentStep == 1)
 		{
 			<h3>Step1: Basic Information</h3>
@@ -50,7 +50,7 @@
 				<input type="tel" name="PhoneNumber" class="form-control" placeholder="Enter your phone number" required />
 			</div>
 			<br />
-			<button class="button" type="submit" name="nextStep" value="1">Next</button>
+			<button class="button" type="submit" name="nextStep" value="true">Next</button>
 		}
 		else if (Model.CurrentStep == 2)
 		{
@@ -61,7 +61,7 @@
 					<option value="">Select your membership type</option>
 					<option value="CommunityMember">Community Member</option>
 					<option value="KeyAccessMember">Key Access Member</option>
-					<option vlaue="CreativeWorkspaceMember">Creative Workspace Member</option>
+					<option value="CreativeWorkspaceMember">Creative Workspace Member</option>
 				</select>
 			</div>
 			<div class="form-group">
@@ -80,8 +80,32 @@
 				</div>
 			</div>
 			<br />
-			<button class="button" type="submit" name="prevStep" value="1">Back</button>
+			<button class="button" type="submit" name="prevStep" value="true">Back</button>
 			<button class="button" type="submit" name="submit" value="true">Submit</button>
+		}
+		else if (Model.CurrentStep == 3)
+		{
+			<h3 style="color: green">Membership request submitted succesfuly! :)</h3>
+			<p style="color: green">Your membership request has been successfuly submitted and is pending admin approval.</p>
+			<h4>Profile summary:</h4>
+			<ul>
+				<li><strong>First Name:</strong>@Model.FirstName</li>
+				<li><strong>Last Name:</strong>@Model.LastName</li>
+				<li><strong>Email:</strong>@Model.Email</li>
+				<li><strong>Address:</strong>@Model.Address</li>
+				<li><strong>Phone Number:</strong>@Model.PhoneNumber</li>
+				<li><strong>Membership Type:</strong>@Model.MembershipType</li>
+				<li><strong>Interests:</strong>@Model.Interests</li>
+			</ul>
+			<p>Will will notify you once your request has been approved.</p>
+			<button class="button"
+					type="button"
+					onclick="window.location.href='/Home'"
+					style="background: #390814;"
+					onmouseover="this.style.backgroundColor='white'; this.style.color= '#390814'"
+					onmouseout="this.style.backgroundColor='#390814'; this.style.color='white'">
+				Return home 
+			</button>
 		}
 	</form>
 </div>
