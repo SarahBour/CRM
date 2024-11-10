@@ -15,8 +15,10 @@
         public int MailingList { get; set; }
 
         public string Address { get; set; }
-        public int PhoneNumber { get; set; }
+        public string PhoneNumber { get; set; }
         public string ProfileStatus { get; set; }
+
+        public List<UserInterest> UserInterests { get; set; }
 
 
 

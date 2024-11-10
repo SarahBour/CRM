@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Culture2Geth.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20241104083424_InitialOne")]
-    partial class InitialOne
+    [Migration("20241110211644_myMigr")]
+    partial class myMigr
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,6 +23,23 @@ namespace Culture2Geth.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
+
+            modelBuilder.Entity("Culture2Geth.Models.Interest", b =>
+                {
+                    b.Property<int>("InterestID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("InterestID"));
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasColumnType("longtext");
+
+                    b.HasKey("InterestID");
+
+                    b.ToTable("Interests");
+                });
 
             modelBuilder.Entity("Culture2Geth.Models.User", b =>
                 {
@@ -67,8 +84,9 @@ namespace Culture2Geth.Migrations
                         .IsRequired()
                         .HasColumnType("longtext");
 
-                    b.Property<int>("PhoneNumber")
-                        .HasColumnType("int");
+                    b.Property<string>("PhoneNumber")
+                        .IsRequired()
+                        .HasColumnType("longtext");
 
                     b.Property<string>("ProfileStatus")
                         .IsRequired()
@@ -81,6 +99,58 @@ namespace Culture2Geth.Migrations
                     b.HasKey("UserId");
 
                     b.ToTable("User");
+                });
+
+            modelBuilder.Entity("Culture2Geth.Models.UserInterest", b =>
+                {
+                    b.Property<int>("UserInterestID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("UserInterestID"));
+
+                    b.Property<int>("InterestID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("UserId")
+                        .HasColumnType("int");
+
+                    b.HasKey("UserInterestID");
+
+                    b.HasIndex("InterestID");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("UserInterests");
+                });
+
+            modelBuilder.Entity("Culture2Geth.Models.UserInterest", b =>
+                {
+                    b.HasOne("Culture2Geth.Models.Interest", "interest")
+                        .WithMany("UserInterests")
+                        .HasForeignKey("InterestID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Culture2Geth.Models.User", "user")
+                        .WithMany("UserInterests")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("interest");
+
+                    b.Navigation("user");
+                });
+
+            modelBuilder.Entity("Culture2Geth.Models.Interest", b =>
+                {
+                    b.Navigation("UserInterests");
+                });
+
+            modelBuilder.Entity("Culture2Geth.Models.User", b =>
+                {
+                    b.Navigation("UserInterests");
                 });
 #pragma warning restore 612, 618
         }

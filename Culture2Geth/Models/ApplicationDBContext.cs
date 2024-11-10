@@ -9,5 +9,7 @@ namespace Culture2Geth.Models
         { 
         }
         public DbSet<User> User { get; set; }
+        public DbSet<Interest> Interest { get; set; }
+        public DbSet<UserInterest> UserInterest { get; set; }
     }
 }
