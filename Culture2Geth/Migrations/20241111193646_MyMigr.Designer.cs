@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Culture2Geth.Migrations
 {
     [DbContext(typeof(ApplicationDBContext))]
-    [Migration("20241110211644_myMigr")]
-    partial class myMigr
+    [Migration("20241111193646_MyMigr")]
+    partial class MyMigr
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -38,7 +38,7 @@ namespace Culture2Geth.Migrations
 
                     b.HasKey("InterestID");
 
-                    b.ToTable("Interests");
+                    b.ToTable("Interest");
                 });
 
             modelBuilder.Entity("Culture2Geth.Models.User", b =>
@@ -121,7 +121,7 @@ namespace Culture2Geth.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserInterests");
+                    b.ToTable("UserInterest");
                 });
 
             modelBuilder.Entity("Culture2Geth.Models.UserInterest", b =>

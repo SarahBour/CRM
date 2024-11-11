@@ -35,7 +35,7 @@ namespace Culture2Geth.Migrations
 
                     b.HasKey("InterestID");
 
-                    b.ToTable("Interests");
+                    b.ToTable("Interest");
                 });
 
             modelBuilder.Entity("Culture2Geth.Models.User", b =>
@@ -118,7 +118,7 @@ namespace Culture2Geth.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("UserInterests");
+                    b.ToTable("UserInterest");
                 });
 
             modelBuilder.Entity("Culture2Geth.Models.UserInterest", b =>

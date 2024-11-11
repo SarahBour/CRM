@@ -104,12 +104,11 @@ namespace Culture2Geth.Pages
 
 
 // include cannot create a profile with existing email 
+// include cannot create a profile with existing phone number 
 // include password hashing 
 // maybe add password strength 
-// the phone number should be valid 
-// the address should be valid 
+// check for intial membership type :) 
 
-// you can save user data after each step
 
 
 

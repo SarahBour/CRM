@@ -1,0 +1,47 @@
+﻿@page
+@model Culture2Geth.Pages.RequestsModel
+@{
+    ViewData["Title"] = "Membership Requests";
+    Layout = null;
+}
+
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Culture2Geth.styles.css" asp-append-version="true" />
+
+<div class="navbar text-center">
+    <h2 style="color: white; margin-right: 400px">Membership Requests</h2>
+</div>
+
+<br />
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Address</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model.PendingUsers)
+            {
+                <tr>
+                    <td>@user.FirstName @user.LastName</td>
+                    <td>@user.Email</td>
+                    <td>@user.Address</td>
+                    <td>
+                        <!-- Approve and Deny Buttons -->
+                            <form method="post" asp-page-handler="Approve" class="d-inline">
+                                <button type="submit" class="btn btn-success" name="userId" value="@user.UserId">Approve</button>
+                            </form>
+                            <form method="post" asp-page-handler="Deny" class="d-inline">
+                                <button type="submit" class="btn btn-danger" name="userId" value="@user.UserId">Deny</button>
+                           </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</body>

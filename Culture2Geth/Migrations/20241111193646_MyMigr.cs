@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Culture2Geth.Migrations
 {
     /// <inheritdoc />
-    public partial class myMigr : Migration
+    public partial class MyMigr : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -15,7 +15,7 @@ namespace Culture2Geth.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "Interests",
+                name: "Interest",
                 columns: table => new
                 {
                     InterestID = table.Column<int>(type: "int", nullable: false)
@@ -25,7 +25,7 @@ namespace Culture2Geth.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Interests", x => x.InterestID);
+                    table.PrimaryKey("PK_Interest", x => x.InterestID);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
 
@@ -66,7 +66,7 @@ namespace Culture2Geth.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "UserInterests",
+                name: "UserInterest",
                 columns: table => new
                 {
                     UserInterestID = table.Column<int>(type: "int", nullable: false)
@@ -76,15 +76,15 @@ namespace Culture2Geth.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_UserInterests", x => x.UserInterestID);
+                    table.PrimaryKey("PK_UserInterest", x => x.UserInterestID);
                     table.ForeignKey(
-                        name: "FK_UserInterests_Interests_InterestID",
+                        name: "FK_UserInterest_Interest_InterestID",
                         column: x => x.InterestID,
-                        principalTable: "Interests",
+                        principalTable: "Interest",
                         principalColumn: "InterestID",
                         onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
-                        name: "FK_UserInterests_User_UserId",
+                        name: "FK_UserInterest_User_UserId",
                         column: x => x.UserId,
                         principalTable: "User",
                         principalColumn: "UserId",
@@ -93,13 +93,13 @@ namespace Culture2Geth.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserInterests_InterestID",
-                table: "UserInterests",
+                name: "IX_UserInterest_InterestID",
+                table: "UserInterest",
                 column: "InterestID");
 
             migrationBuilder.CreateIndex(
-                name: "IX_UserInterests_UserId",
-                table: "UserInterests",
+                name: "IX_UserInterest_UserId",
+                table: "UserInterest",
                 column: "UserId");
         }
 
@@ -107,10 +107,10 @@ namespace Culture2Geth.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "UserInterests");
+                name: "UserInterest");
 
             migrationBuilder.DropTable(
-                name: "Interests");
+                name: "Interest");
 
             migrationBuilder.DropTable(
                 name: "User");

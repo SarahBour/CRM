@@ -1,9 +1,38 @@
 ﻿@page
 @model Culture2Geth.Pages.AdminModel
 @{
-	ViewData["Title"] = "Admin Page";
+    ViewData["Title"] = "Admin Page";
+    Layout = null;
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Culture2Geth.styles.css" asp-append-version="true" />
 
-<div class="text-center">
-	<h1>Welcome to the admin page! :)</h1>
+<div class="admin-container">
+    <div class="admin-header navbar">
+        <h1 style="color: white">Admin Panel</h1>
+        <input class="search-bar" type="text" placeholder="Search..."/>
+        <div class="profile">
+            <img src="~/images/ProfilePic.png" alt="Profile Picture">
+            <span>Admin</span>
+        </div>
+    </div>
+
+    <button type="button" class="request-button" onclick="window.location.href='/Requests'">Requests for Membership</button>
+
+    <h3 class="label-left">Members</h3>
+    <div class="members-row">
+        <div class="member-card">
+            <img class="card-img" src="~/images/CommunityMembers.jpg" alt="Community Members">
+            <button class="member-button">Community Members</button>
+        </div>
+        <div class="member-card">
+            <img class="card-img" src="~/images/Keyaccess.jpg" alt="Key Access Members">
+            <button class="member-button">Key Access Members</button>
+        </div>
+        <div class="member-card">
+            <img class="card-img" src="~/images/Creativeworkspace.jpg" alt="Creative Workspace Members">
+            <button class="member-button">Creative Workspace Members</button>
+        </div>
+    </div>
 </div>
