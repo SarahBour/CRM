@@ -19,13 +19,11 @@ namespace Culture2Geth.Pages
 
         public async Task OnGet()
         {
-            // Load the pending users
             PendingUsers =_context.User
                 .Where(u => u.ProfileStatus == "Pending")
                 .ToList();
         }
 
-        // Approve Handler
         public async Task<IActionResult> OnPostApproveAsync(int userId)
         {
             var user = await _context.User.FindAsync(userId);
@@ -34,10 +32,9 @@ namespace Culture2Geth.Pages
                 user.ProfileStatus = "Approved";
                 await _context.SaveChangesAsync();
             }
-            return RedirectToPage(); // Refreshes the page to update the list
+            return RedirectToPage(); 
         }
 
-        // Deny Handler
         public async Task<IActionResult> OnPostDenyAsync(int userId)
         {
             var user = await _context.User.FindAsync(userId);
@@ -46,7 +43,7 @@ namespace Culture2Geth.Pages
                 _context.User.Remove(user);
                 await _context.SaveChangesAsync();
             }
-            return RedirectToPage(); // Refreshes the page to update the list
+            return RedirectToPage(); 
         }
     }
 

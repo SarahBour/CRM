@@ -44,9 +44,23 @@ namespace Culture2Geth.Pages
 
         public async Task<IActionResult> OnPostAsync()
         {
+            // chekcing for validation 
+            if(await _context.User.AnyAsync(u => u.Email == Email))
+            {
+                ModelState.AddModelError("Email", "An account with this email already exists.");
+            }
+            if(await _context.User.AnyAsync(u => u.PhoneNumber == PhoneNumber))
+            {
+                ModelState.AddModelError("PhoneNumber", "An account with this phone number already exists.");
+            }
+            if(Password != ConfirmPassword)
+            {
+                ModelState.AddModelError("ConfirmPassword", "Passwords don't match");
+            }
+
+            // if everything is good, create the user 
             if (ModelState.IsValid)
             {
-                // Create a new user
                 var user = new User
                 {
                     FirstName = FirstName,
@@ -60,11 +74,9 @@ namespace Culture2Geth.Pages
                     ProfileStatus = "Pending"
                 };
 
-                // Save the user to the database
                 _context.User.Add(user);
                 await _context.SaveChangesAsync();
 
-                // Add selected interests to the User
                 foreach (var interestName in Interests)
                 {
                     var interest = await _context.Interest
@@ -72,13 +84,11 @@ namespace Culture2Geth.Pages
 
                     if (interest == null)
                     {
-                        // If the interest does not exist, create it
                         interest = new Interest { Name = interestName };
                         _context.Interest.Add(interest);
                         await _context.SaveChangesAsync();
                     }
 
-                    // Create a relationship between the user and the interest
                     _context.UserInterest.Add(new UserInterest
                     {
                         UserId = user.UserId,
@@ -86,14 +96,12 @@ namespace Culture2Geth.Pages
                     });
                 }
 
-                // Save the changes to the relationships
                 await _context.SaveChangesAsync();
 
                 return RedirectToPage("Success");
             }
             foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
             {
-                // For example, log the error message (you could log to a file, or handle it differently)
                 Debug.WriteLine(error.ErrorMessage);
             }
             return Page();
@@ -103,11 +111,9 @@ namespace Culture2Geth.Pages
 
 
 
-// include cannot create a profile with existing email 
-// include cannot create a profile with existing phone number 
-// include password hashing 
+// Later2: include password hashing 
 // maybe add password strength 
-// check for intial membership type :) 
+// Later1: check for intial membership type :) 
 
 
 
