@@ -58,6 +58,14 @@ namespace Culture2Geth.Pages
         [BindProperty]
         public List<string> Interests { get; set; } = new List<string>();
 
+        [BindProperty]
+        [Required(ErrorMessage = "Please select if you'd like to receive emails.")]
+        public int MailingList { get; set; }
+
+
+
+
+
         public async Task<IActionResult> OnPostAsync()
         {
             // chekcing for validation 
@@ -88,8 +96,11 @@ namespace Culture2Geth.Pages
                     Address = Address,
                     PhoneNumber = PhoneNumber,
                     MembershipType = MembershipType,
+                    JoinDate= DateTime.Now,
+                    ExpiryDate = DateTime.Now.AddYears(1),
                     Role = "Member",
-                    ProfileStatus = "Pending"
+                    ProfileStatus = "Pending",
+                    MailingList = MailingList
                 };
 
                 _context.User.Add(user);

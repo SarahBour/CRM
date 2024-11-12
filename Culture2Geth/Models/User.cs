@@ -8,8 +8,8 @@
         public string LastName { get; set; }
         public string Password { get; set; }
         public string MembershipType { get; set; }
-        public string JoinDate { get; set; }
-        public string ExpiryDate { get; set; }
+        public DateTime JoinDate { get; set; }
+        public DateTime ExpiryDate { get; set; }
 
         public string Role { get; set; }
         public int MailingList { get; set; }
