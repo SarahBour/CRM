@@ -16,24 +16,40 @@ namespace Culture2Geth.Pages
             _context = context;
         }
         [BindProperty]
+        [Required(ErrorMessage = "First name is required.")]
+        [StringLength(20, ErrorMessage = "First name must be under 20 characters.")]
         public string FirstName { get; set; }
 
         [BindProperty]
+        [Required(ErrorMessage = "Last name is required.")]
+        [StringLength(20, ErrorMessage = "Last name must be under 20 characters.")]
         public string LastName { get; set; }
 
         [BindProperty]
+        [Required(ErrorMessage = "Email is required.")]
+        [EmailAddress(ErrorMessage = "Please enter a valid email address.")]
         public string Email { get; set; }
 
         [BindProperty]
+        [Required(ErrorMessage = "Password is required.")]
+        [RegularExpression(@"^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
+            ErrorMessage= "Password must be at least 8 characters long and include at least one uppercase letter," +
+            " one lowercase letter, one number, and one special character (e.g., @$!%*?&).")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [BindProperty]
+        [Required(ErrorMessage = "Please confirm your password.")]
         public string ConfirmPassword { get; set; }
 
         [BindProperty]
+        [Required(ErrorMessage = "Address is required.")]
+        [RegularExpression(@"^(?=.*[A-Za-z])[A-Za-z0-9\s,.'-]{10,}$", ErrorMessage = "Please enter a valid address.")]
         public string Address { get; set; }
 
         [BindProperty]
+        [Required(ErrorMessage = "Phone number is required.")]
+        [RegularExpression(@"^\+?\d{10,15}$", ErrorMessage = "Please enter a valid phone number (10-15 digits).")]
         public string PhoneNumber { get; set; }
 
         [BindProperty]
@@ -112,7 +128,6 @@ namespace Culture2Geth.Pages
 
 
 // Later2: include password hashing 
-// maybe add password strength 
 // Later1: check for intial membership type :) 
 
 
