@@ -24,7 +24,7 @@ namespace Culture2Geth.Pages
 		public async Task<IActionResult> OnPostAsync(string Email, string Password)
 		{
 			var user = await _context.User.FirstOrDefaultAsync(u => u.Email == Email);
-            if (user != null && Password == user.Password && user.ProfileStatus == "Approved")
+            if (user != null && BCrypt.Net.BCrypt.Verify(Password, user.Password) && user.ProfileStatus == "Approved")
 			{
                 if (user.Role == "Admin")
 				{
@@ -52,4 +52,3 @@ namespace Culture2Geth.Pages
 		}
 	}
 }
-// Later: BCrypt.Net.BCrypt.Verify(Password, user.Password) 

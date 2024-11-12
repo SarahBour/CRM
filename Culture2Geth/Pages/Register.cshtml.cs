@@ -77,12 +77,14 @@ namespace Culture2Geth.Pages
             // if everything is good, create the user 
             if (ModelState.IsValid)
             {
+                // hashing password for security :)
+                var hashedPassword = BCrypt.Net.BCrypt.HashPassword(Password);
                 var user = new User
                 {
                     FirstName = FirstName,
                     LastName = LastName,
                     Email = Email,
-                    Password = Password,  
+                    Password = hashedPassword,  
                     Address = Address,
                     PhoneNumber = PhoneNumber,
                     MembershipType = MembershipType,
@@ -125,9 +127,6 @@ namespace Culture2Geth.Pages
     }
 }
 
-
-
-// Later2: include password hashing 
 
 
 
