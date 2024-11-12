@@ -1,9 +1,22 @@
 ﻿@page
 @model Culture2Geth.Pages.MemberModel
 @{
-	ViewData["Title"] = "Member Page";
+    ViewData["Title"] = "Member Page";
+    Layout = null;
 }
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+<link rel="stylesheet" href="~/Culture2Geth.styles.css" asp-append-version="true" />
 
+<div class="admin-container">
+    <div class="admin-header navbar">
+        <img src="images/logonav.png" alt="Together Culture Cambridge Logo" style="height: 100px"/>
+        <button class="button" onclick="window.location.href='/Logout'" style="margin-top: 10px; margin-right: 20px; background-color: white; color: black">Logout</button>
+        <div class="profile">
+            <img src="~/images/ProfilePic.png" alt="Profile Picture">
+            <span>Admin</span>
+        </div>
+    </div>
 <div class="text-center">
 	<h1>Welcome to the members' page! :)</h1>
 </div>
