@@ -90,6 +90,7 @@ input{
 }
 
 .DetailsContainer {
+    background-color: #390814;
     border-radius: 16px;
     padding: 10px;
     margin: 20px;

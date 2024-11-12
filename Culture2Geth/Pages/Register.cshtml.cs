@@ -128,7 +128,6 @@ namespace Culture2Geth.Pages
 
 
 // Later2: include password hashing 
-// Later1: check for intial membership type :) 
 
 
 

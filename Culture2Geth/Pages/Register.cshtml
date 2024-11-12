@@ -14,24 +14,15 @@
 </head>
 
 <div class="DetailsContainer">
-    <h4 style="color:#390814;">Community Membership</h4>
+    <h4 style="color:white;">For your reference</h4>
     <br />
-    <p style="font-weight: bold;">Cost: £18.50/ month</p>
-    <br />
-    <p>
-        Together Culture is making space to create, connect and to become more creative.
-    </p>
-    <br />
-    <p>Join our burgeoning community of open-minded and curious people and make 5 Ftizroy Street your home away from home.</p>
-    <br />
-    <p style="font-weight: bold;">Benefits include:</p>
+    <p style="color: white">We offer three types of membership:</p>
     <ul class="BenefitsList">
-        <li>Inlusive tickets to all events</li>
-        <li>Inclusive tickets to all collaborative & creative skills development workshops</li>
-        <li>A City Centre base that you can call home, have a (free) coffee with your friends, host your next book club, do some work, be inspired, or just be.</li>
-        <li>Participation in the annual Citizens’ Studio.</li>
-        <li>A voice in decisions about new social enterprises developed in Together Culture’s incubator.</li>
-        <li>A first edition Together Culture ‘Living Book’ - a digital workbook for living the values that emerged through co-design to bring creative practice into all your endeavors.</li>
+        <li>Community Memebership: £18.5/ month, The Community Membership offers free or discounted event tickets, access to workshops, participation in the Citizens' Studio, a voice in new social enterprises, and a City Centre base for work, relaxation, and socializing.</li>
+        <br />
+        <li>Key Access Membership: £45/ month, Priority access to exclusive spaces, resources, and events within Together Culture Fitzroy, providing a more premium experience for members seeking enhanced access and opportunities.</li>
+        <br />
+        <li>Creative Workspace Member: £70/ month + £100 joining fee, The Workspace Membership includes all Community Membership perks, plus 24/7 access to Together Culture Fitzroy, a dedicated workspace, storage space, and a network of like-minded collaborators.</li>
     </ul>
 </div>
 
@@ -43,42 +34,42 @@
         <h3>Step 1: Basic Information</h3>
         <br />
         <div class="form-group">
-            <label for="FirstName">First Name</label>
+            <label for="FirstName">First Name*</label>
             <input asp-for="FirstName" class="form-control" placeholder="Enter your first name" required />
         </div>
         <div class="form-group">
-            <label for="LastName">Last Name</label>
+            <label for="LastName">Last Name*</label>
             <input asp-for="LastName" class="form-control" placeholder="Enter your last name" required />
         </div>
         <div class="form-group">
-            <label for="Email">Email</label>
+            <label for="Email">Email*</label>
             <input asp-for="Email" class="form-control" placeholder="Enter your email" required />
         </div>
 
         <div class="form-group">
-            <label for="Password">Password</label>
+            <label for="Password">Password*</label>
             <input asp-for="Password" type="password" class="form-control" placeholder="Enter your password" required />
         </div>
         <div class="form-group">
-            <label for="ConfirmPassword">Confirm Password</label>
+            <label for="ConfirmPassword">Confirm Password*</label>
             <input asp-for="ConfirmPassword" type="password" class="form-control" placeholder="Confirm your password" required />
         </div>
 
         <h3>Step 2: Address and Contact Information</h3>
         <br />
         <div class="form-group">
-            <label for="Address">Address</label>
+            <label for="Address">Address*</label>
             <input asp-for="Address" class="form-control" placeholder="Enter your address" required />
         </div>
         <div class="form-group">
-            <label for="PhoneNumber">Phone Number</label>
+            <label for="PhoneNumber">Phone Number*</label>
             <input asp-for="PhoneNumber" type="tel" class="form-control" placeholder="Enter your phone number" required />
         </div>
 
         <h3>Step 3: Membership Details</h3>
         <br />
         <div class="form-group">
-            <label for="MembershipType">Membership Type</label>
+            <label for="MembershipType">Membership Type*</label>
             <select asp-for="MembershipType" class="form-control" required>
                 <option value="">Select your membership type</option>
                 <option value="CommunityMember">Community Member</option>
@@ -92,16 +83,11 @@
         <div class="form-group">
             <label for="Interests">Interests</label>
             <div>
-                <label><input type="checkbox" name="Interests" value="Creative Arts" /> Creative Arts</label>
-                <label><input type="checkbox" name="Interests" value="Sustainability" /> Sustainability</label>
-                <label><input type="checkbox" name="Interests" value="Community Service" /> Community Service</label>
-                <label><input type="checkbox" name="Interests" value="Entrepreneurship" /> Entrepreneurship</label>
-                <label><input type="checkbox" name="Interests" value="Technology" /> Technology</label>
-                <label><input type="checkbox" name="Interests" value="Education" /> Education and Learning</label>
-                <label><input type="checkbox" name="Interests" value="Networking" /> Networking</label>
-                <label><input type="checkbox" name="Interests" value="Cultural Events" /> Cultural Events</label>
-                <label><input type="checkbox" name="Interests" value="Health and Wellness" /> Health and Wellness</label>
-                <label><input type="checkbox" name="Interests" value="Food and Cooking" /> Food and Cooking</label>
+                <label><input type="checkbox" name="Interests" value="Sharing" /> Sharing</label>
+                <label><input type="checkbox" name="Interests" value="Caring" /> Caring</label>
+                <label><input type="checkbox" name="Interests" value="Learning" /> Learning</label>
+                <label><input type="checkbox" name="Interests" value="Working" /> Working</label>
+                <label><input type="checkbox" name="Interests" value="Happenings" /> Happenings</label>
             </div>
         </div>
 
