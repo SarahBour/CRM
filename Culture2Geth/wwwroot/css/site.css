@@ -90,7 +90,7 @@ input{
 }
 
 .DetailsContainer {
-    background-color: #390814;
+    background-color: orange;
     border-radius: 16px;
     padding: 10px;
     margin: 20px;
@@ -218,6 +218,7 @@ input{
 .my-row {
     display: flex;
     justify-content: space-between;
+    padding:2rem;
 }
 
 .image-section{
@@ -228,3 +229,4 @@ input{
     width: 700px;
     height: 500px;
 }
+
