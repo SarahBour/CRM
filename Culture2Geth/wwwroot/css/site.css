@@ -214,3 +214,17 @@ input{
     .member-button:hover {
         background-color: #521020;
     }
+
+.my-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.image-section{
+    margin-left: 20px;
+}
+
+.image-section img{
+    width: 700px;
+    height: 500px;
+}
