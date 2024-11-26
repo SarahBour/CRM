@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 
 namespace Culture2Geth.Pages
 {
+    // logout class 
     public class LogoutModel : PageModel
     {
         public async Task<IActionResult> OnPostAsync()

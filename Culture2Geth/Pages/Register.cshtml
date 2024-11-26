@@ -4,6 +4,19 @@
     ViewData["Title"] = "Membership Registration Page";
     Layout = null;
 }
+
+<!--This is the registration page that asks for: 
+    first name 
+    last name 
+    email 
+    password 
+    confirmation of the password 
+    address 
+    phone number 
+    the user's interests 
+    their permission to send emails 
+-->
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,6 +25,8 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Culture2Geth.styles.css" asp-append-version="true" />
 </head>
+
+<!--This is a container that is on the side of the registration form, it is for the user's reference when filling the form-->
 
 <div class="DetailsContainer">
     <h4 style="color:white;">For your reference</h4>
@@ -26,6 +41,7 @@
     </ul>
 </div>
 
+<!--The registration form-->
 <div class="containerAuth">
     <h2 style="color: #FD1F3D">Request for membership</h2>
     <form method="POST">

@@ -4,10 +4,16 @@
     ViewData["Title"] = "Admin Page";
     Layout = null;
 }
+<!--This is the admin's home page
+    it has a button to lead to the table for membership requests 
+    and containers to distinguish between memberships 
+-->
+
 <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
 <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
 <link rel="stylesheet" href="~/Culture2Geth.styles.css" asp-append-version="true" />
 
+<!--The navigation bar-->
 <div class="admin-container">
     <div class="admin-header navbar">
         <h1 style="color: white">Admin Panel</h1>
@@ -19,8 +25,10 @@
         </div>
     </div>
 
+    <!--The button that leads to the requests page -->
     <button type="button" class="request-button" onclick="window.location.href='/Requests'">Requests for Membership</button>
 
+    <!--Membership containers-->
     <h3 class="label-left">Members</h3>
     <div class="members-row">
         <div class="member-card">

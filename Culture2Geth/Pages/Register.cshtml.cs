@@ -5,16 +5,22 @@ using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
 using Microsoft.EntityFrameworkCore;
 
+// register class, this is the logic behind the html file 
+
 namespace Culture2Geth.Pages
 {
     public class RegisterModel : PageModel
     {
+        // linking the database 
+
         private readonly ApplicationDBContext _context;
 
         public RegisterModel(ApplicationDBContext context)
         {
             _context = context;
         }
+        // Storing the data + data validation 
+
         [BindProperty]
         [Required(ErrorMessage = "First name is required.")]
         [StringLength(20, ErrorMessage = "First name must be under 20 characters.")]
@@ -106,6 +112,7 @@ namespace Culture2Geth.Pages
                 _context.User.Add(user);
                 await _context.SaveChangesAsync();
 
+                // linking the interests with users in the UserInterest table 
                 foreach (var interestName in Interests)
                 {
                     var interest = await _context.Interest
@@ -127,6 +134,7 @@ namespace Culture2Geth.Pages
 
                 await _context.SaveChangesAsync();
 
+                // if successful, redirect to this page to inform the user that it was! 
                 return RedirectToPage("Success");
             }
             foreach (var error in ModelState.Values.SelectMany(v => v.Errors))
