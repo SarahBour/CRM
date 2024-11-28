@@ -17,6 +17,7 @@ namespace Culture2Geth.Pages
 
         public List<User> PendingUsers { get; set; }
 
+        // get a list of the users with status pending 
         public async Task OnGet()
         {
             PendingUsers =_context.User
@@ -24,9 +25,11 @@ namespace Culture2Geth.Pages
                 .ToList();
         }
 
+        // if the admin clicks on approve 
         public async Task<IActionResult> OnPostApproveAsync(int userId)
         {
             var user = await _context.User.FindAsync(userId);
+            // change the status to approved 
             if (user != null)
             {
                 user.ProfileStatus = "Approved";
@@ -35,9 +38,11 @@ namespace Culture2Geth.Pages
             return RedirectToPage(); 
         }
 
+        // if the admin clicks on deny 
         public async Task<IActionResult> OnPostDenyAsync(int userId)
         {
             var user = await _context.User.FindAsync(userId);
+            // remove user from the database 
             if (user != null)
             {
                 _context.User.Remove(user);
