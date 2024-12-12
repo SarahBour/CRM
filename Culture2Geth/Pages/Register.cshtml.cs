@@ -23,12 +23,12 @@ namespace Culture2Geth.Pages
 
         [BindProperty]
         [Required(ErrorMessage = "First name is required.")]
-        [StringLength(20, ErrorMessage = "First name must be under 20 characters.")]
+        [StringLength(50, ErrorMessage = "First name must be under 50 characters.")]
         public string FirstName { get; set; }
 
         [BindProperty]
         [Required(ErrorMessage = "Last name is required.")]
-        [StringLength(20, ErrorMessage = "Last name must be under 20 characters.")]
+        [StringLength(50, ErrorMessage = "Last name must be under 50 characters.")]
         public string LastName { get; set; }
 
         [BindProperty]
