@@ -70,4 +70,6 @@ Ensure you're using the correct admin credentials to access the admin dashboard 
 ## Limitations  
 ⚠️ This project is a work in progress and may have incomplete features due to being part of a group project. Some functionalities may not be fully integrated.  
 ## Contributions  
-Feel free to fork the repository and contribute improvements! If you find any bugs or want to discuss ideas, please open an issue.  
+Feel free to fork the repository and contribute improvements! If you find any bugs or want to discuss ideas, please open an issue.    
+
+🌟If you like this project don't forget to star ⭐ the repository!
