@@ -16,8 +16,8 @@ This CRM web app is a group project that I contributed to, written in C#, HTML, 
 ## Getting Started  
 1️⃣ Clone the Repository  
 ```
-git clone https://github.com/yourusername/CRM-WebApp.git
-cd CRM-WebApp
+git clone https://github.com/SarahBour/CRM.git
+cd CRM
 ```
 2️⃣ Set Up the Database  
 To use the database, follow these steps:  
