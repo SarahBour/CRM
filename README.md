@@ -55,6 +55,9 @@ Visit http://localhost:5000 in your browser to view the app.
 
 Admin Functions  
 To log in the admin's account and use its functions, enter the following credentials:  
+⚠️ Demo credentials for evaluation purposes only — not tied to any real account
+
+
 Email: admin@gmail.com  
 Password: Password1!  
 Login and Registration: Users can register and log in using a secure authentication system.  
